@@ -1,0 +1,151 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+
+  - job_name: hostd_host_state
+    metrics_path: /api/state/host/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_host_consensus
+    metrics_path: /api/state/consensus/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_syncer_address
+    metrics_path: /api/syncer/address/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_syncer_peers
+    metrics_path: /api/syncer/peers/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_settings
+    metrics_path: /api/settings/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_metrics
+    metrics_path: /api/prometheusmetrics
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_accounts
+    metrics_path: /api/accountsprometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_tpool_fee
+    metrics_path: /api/tpool/fee/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_wallet
+    metrics_path: /api/wallet/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_volumes
+    metrics_path: /api/volumesprometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+  
+  - job_name: hostd_alerts
+    metrics_path: /api/alerts/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_sessions
+    metrics_path: /api/sessions/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_transactions
+    metrics_path: /api/wallet/transactions/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880
+
+  - job_name: hostd_pending_transactions
+    metrics_path: /api/wallet/pending/prometheus
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9880

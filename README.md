@@ -1,12 +1,26 @@
+# Grafana
+
+1. Add new prometheus data source pointed to your hostd metrics collector `http://prometheushost:9090`
+2. Run prometheus with the example `prometheus.yml`
+3. Copy `hostd-grafana.json` contents to create new dashboard
+
+*note: prometheus endpoints are available in a fork of hostd here: https://github.com/bustedware/hostd
+PR submitted here: https://github.com/SiaFoundation/hostd/pull/213 to add to master hostd. Potentially
+could run out of an exporter instead of adding new API endpoints
+
+The dashboard pretty well mirrors the existing UI for hostd. One of the major differences is that in the hostd UI you get instantanious metrics like for storage write operations but in this grafana dashboard the storage writes are cumulative.
+
+![alt text](dashboard.png)
+
 # Sia for Telegraf
 
-1. Run the following command to generage a file named `sia-telegraf-http-inputs.conf`
+1. Run the following command to generage a file named `sia-telegraf-http-inputs.conf` and `sia-api-responses.json`
 
 ```
-python3 sia-to-telegraf-config.py
+python3 sia-to-telegraf-config.py <hostd_api_password>
 ```
 
-2. Plugin the result files contents into an existing telegraf.conf
+2. Plugin the contents of `sia-telegraf-http-inputs.conf` into an existing telegraf.conf
 
 3. Restart telegraf
 

@@ -1,9 +1,8 @@
 import requests, json, sys, traceback, time
 from requests.auth import HTTPBasicAuth
 
-# Your Basic Authentication credentials
-username = ""
-password = "hostsarecool"
+api_username = ""
+api_password = sys.argv[1]
 
 hostd_hosts = [
     "localhost:9880"
@@ -12,7 +11,7 @@ renterd_hosts = [
     "localhost:10880"
 ]
 walletd_hosts = [
-    "localhost:11880"
+    "localhost:9980"
 ]
 # TODO: dynamically retrieve api endpoints
 hostd_url_paths = [
@@ -28,6 +27,7 @@ hostd_url_paths = [
     "/api/state/consensus",
     "/api/state/host",
     "/api/syncer/peers",
+    "/api/syncer/address",
     # "/api/system/dir?path=~",
     "/api/tpool/fee",
     "/api/wallet",
@@ -109,7 +109,7 @@ walletd_url_paths = [
 ]
 
 def http_request(url):
-    response = requests.get(url, auth=HTTPBasicAuth(username, password))
+    response = requests.get(url, auth=HTTPBasicAuth(api_username, api_password))
     if response.status_code == 200:
         return json.loads(response.text)
     else:
@@ -167,8 +167,8 @@ def get_telegraf_header(hosts, path, measurement_name, valueType = None):
             header = header + "    \"http://" + host + path + "\",\n"
     header = header + "  ]\n"
     header = header + "  method = \"GET\"\n"
-    header = header + "  username = \"\"\n"
-    header = header + "  password = \"test1234\"\n"
+    header = header + "  username = \"" + api_username + "\"\n"
+    header = header + "  password = \"" + api_password + "\"\n"
     if valueType is None:
         header = header + "  data_format = \"json_v2\"\n"
         header = header + "  [[inputs.http.json_v2]]\n"
@@ -237,10 +237,10 @@ for service, object in path_map.items():
         tconf['config'] = tconf['config'] + get_telegraf_config(service, url_path, elapsed_time, json_data)
         tconf['responses'].append({'info': service + " " + url_path, 'response': json_data})
 
-with open('sia-telegraf-http-inputs.json', 'w') as file:
+with open('sia-telegraf-http-inputs.conf', 'w') as file:
     file.write(tconf['config'])
 
-with open('sia-telegraf-http-inputs.json', 'w') as file:
+with open('sia-api-responses.json', 'w') as file:
     for response in tconf['responses']:
         file.write(response['info'] + '\n')
         file.write(json.dumps(response['response'], indent=2) + '\n\n')
