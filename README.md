@@ -1,14 +1,14 @@
 # Grafana
 
-1. Add new prometheus data source pointed to your hostd metrics collector `http://prometheushost:9090`
-2. Run prometheus with the example `prometheus.yml`
-3. Copy `hostd-grafana.json` contents to create new dashboard
+1. Run prometheus with the example `prometheus.yml`
+2. In Grafana, add new prometheus data source pointed to your hostd metrics collector `http://prometheushost:9090` 
+3. Create a new dashboard and copy `hostd-grafana.json` contents into the JSON model under the dashboard settings
 
 *note: prometheus endpoints are available in a fork of hostd here: https://github.com/bustedware/hostd
 PR submitted here: https://github.com/SiaFoundation/hostd/pull/213 to add to master hostd. Potentially
 could run out of an exporter instead of adding new API endpoints
 
-The dashboard pretty well mirrors the existing UI for hostd. One of the major differences is that in the hostd UI you get instantanious metrics like for storage write operations but in this grafana dashboard the storage writes are cumulative.
+The dashboard pretty well mirrors the existing UI for hostd.
 
 ![alt text](dashboard.png)
 
