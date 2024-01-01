@@ -1,0 +1,43 @@
+# sia global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+scrape_configs:
+  - job_name: walletd_consensus_network
+    metrics_path: /prometheus/consensus/network
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9980
+
+  - job_name: walletd_consensus_tip
+    metrics_path: /prometheus/consensus/tip
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9980
+
+  - job_name: walletd_syncer_peers
+    metrics_path: /prometheus/syncer/peers
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9980
+
+  - job_name: walletd_txpool_fee
+    metrics_path: /prometheus/txpool/fee
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9980
+
