@@ -1,0 +1,11 @@
+{
+    "hostd_hosts": [
+        "localhost:9880",
+    ],
+    "renterd_hosts": [
+        "localhost:9980"
+    ],
+    "walletd_hosts": [
+        "localhost:9980"
+    ]
+}
