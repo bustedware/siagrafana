@@ -1,11 +1,73 @@
 {
-    "hostd_hosts": [
-        "localhost:9880",
-    ],
-    "renterd_hosts": [
-        "localhost:9980"
-    ],
+    "hostd_hosts": ["localhost:9880"],
+    "renterd_hosts": ["localhost:9980"],
     "walletd_hosts": [
-        "localhost:9980"
-    ]
+        {
+            "http": "localhost:9980",
+            "prometheus": "localhost:9982"
+        }
+    ],
+    "hostd_meta": {
+        "apipwd": "hostsarecool",
+        "endpoints": [
+            "/prometheus/state/host",
+            "/prometheus/state/consensus",
+            "/prometheus/syncer/address",
+            "/prometheus/syncer/peers",
+            "/prometheus/alerts",
+            "/prometheus/settings",
+            "/prometheus/metrics",
+            "/prometheus/accounts",
+            "/prometheus/volumes",
+            "/prometheus/sessions",
+            "/prometheus/tpool/fee",
+            "/prometheus/wallet",
+            "/prometheus/wallet/transactions",
+            "/prometheus/wallet/pending"
+        ]
+    },
+    
+    "renterd_meta": {
+        "apipwd": "hostsarecool",
+        "endpoints": [
+            "/prometheus/bus/alerts",
+            "/prometheus/bus/autopilots",
+            "/prometheus/bus/buckets",
+            "/prometheus/bus/consensus/network",
+            "/prometheus/bus/consensus/state",
+            "/prometheus/bus/contracts",
+            "/prometheus/bus/contracts/prunable",
+            "/prometheus/bus/hosts",
+            "/prometheus/bus/hosts/allowlist",
+            "/prometheus/bus/hosts/blocklist",
+            "/prometheus/bus/hosts/scanning",
+            "/prometheus/bus/params/gouging",
+            "/prometheus/bus/params/upload",
+            "/prometheus/bus/slabbuffers",
+            "/prometheus/bus/search/objects",
+            "/prometheus/bus/settings",
+            "/prometheus/bus/state",
+            "/prometheus/bus/stats/objects",
+            "/prometheus/bus/syncer/address",
+            "/prometheus/bus/syncer/peers",
+            "/prometheus/bus/txpool/recommendedfee",
+            "/prometheus/bus/txpool/transactions",
+            "/prometheus/bus/wallet",
+            "/prometheus/bus/wallet/outputs",
+            "/prometheus/bus/wallet/pending",
+            "/prometheus/bus/wallet/transactions"
+        ]
+    },
+    "walletd_meta": {
+        "apipwd": "hostsarecool",
+        "endpoints": [
+            "/prometheus/consensus/network",
+            "/prometheus/consensus/tip",
+            "/prometheus/syncer/peers",
+            "/prometheus/txpool/transactions",
+            "/prometheus/txpool/fee",
+            "/prometheus/wallets/:name/balance",
+            "/prometheus/wallets/:name/events?offset=0&limit=100"
+        ]
+    }
 }
