@@ -27,8 +27,8 @@ def get_prometheus_job(un, pw, job_name, metrics_path, hosts):
         # offset=0&limit=100
         for idx, param in enumerate(params):
             kv = param.split("=")
-            retstr = retstr + kv[0] + ": [" + kv[1] + """]
-      """
+            retstr = retstr + kv[0] + ": [" + kv[1] + ("""]
+      """, "]")[idx == len(params)-1]
     retstr = retstr + """
     static_configs:
       - targets:
@@ -61,7 +61,7 @@ for host in siahosts["walletd_hosts"]:
                 job_name.insert(1,host["prometheus"].split(":")[0])
                 job_name.insert(2,host["prometheus"].split(":")[1])
                 job_name = "walletd_" + "_".join(job_name)
-                jobs = jobs + get_prometheus_job("", siahosts["walletd_meta"]["apipwd"], job_name, endpoint.replace(":name",wallet), [host]) + "\n\n"
+                jobs = jobs + get_prometheus_job("", siahosts["walletd_meta"]["apipwd"], job_name, endpoint.replace(":name",wallet), [host]) + "\n"
 
 for endpoint in siahosts["walletd_meta"]["endpoints"]:
     if ":name" not in endpoint:
