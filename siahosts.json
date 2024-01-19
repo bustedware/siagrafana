@@ -26,7 +26,6 @@
             "/prometheus/wallet/pending"
         ]
     },
-    
     "renterd_meta": {
         "apipwd": "hostsarecool",
         "endpoints": [
@@ -55,7 +54,8 @@
             "/prometheus/bus/wallet",
             "/prometheus/bus/wallet/outputs",
             "/prometheus/bus/wallet/pending",
-            "/prometheus/bus/wallet/transactions"
+            "/prometheus/bus/wallet/transactions",
+            "/prometheus/autopilot/state"
         ]
     },
     "walletd_meta": {

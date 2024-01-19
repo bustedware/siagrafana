@@ -239,3 +239,12 @@ scrape_configs:
       - targets:
         - localhost:9980
 
+  - job_name: renterd_autopilot_state
+    metrics_path: /prometheus/autopilot/state
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - localhost:9980
+
