@@ -1,0 +1,6 @@
+# generated files by sia-to-grafana-config.py
+grafana.hostd.json
+grafana.walletd.json
+
+# misc files
+notes
