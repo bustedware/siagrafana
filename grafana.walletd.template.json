@@ -1,0 +1,882 @@
+{
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": null,
+    "iteration": 1705639233874,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 59,
+        "panels": [],
+        "title": "Node",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 0,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "SC"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 1
+        },
+        "id": 9,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_wallet_balance_siacoins{instance=\"$hosts\"} / 1000000000000000000000000",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Balance",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 0,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "SF"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 4,
+          "y": 1
+        },
+        "id": 78,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_wallet_balance_siafunds{instance=\"$hosts\"}  ",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Sia Funds",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "left",
+              "displayMode": "auto"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": false
+                },
+                {
+                  "id": "custom.width",
+                  "value": 106
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "job"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "__name__"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "timestamp"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 175
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "height"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 87
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "underflow"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 91
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "txid"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 1043
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 20,
+          "w": 13,
+          "x": 8,
+          "y": 1
+        },
+        "id": 85,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": true,
+              "displayName": "height"
+            }
+          ]
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": false,
+            "expr": "+walletd_wallet_event_transaction_total{instance=\"$hosts\"} / 1000000000000000000000",
+            "format": "table",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Transactions",
+        "transformations": [
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "txid",
+                  "height",
+                  "timestamp",
+                  "underflow",
+                  "Value"
+                ]
+              }
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {},
+              "indexByName": {
+                "Value": 2,
+                "height": 1,
+                "timestamp": 0,
+                "txid": 4,
+                "underflow": 3
+              },
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 1
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "__name__"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "job"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 3,
+          "x": 21,
+          "y": 1
+        },
+        "id": 71,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": false,
+            "expr": "walletd_syncer_peer{instance=\"$hosts\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Syncer Peers",
+        "transformations": [
+          {
+            "id": "labelsToFields",
+            "options": {
+              "keepLabels": [
+                "address"
+              ],
+              "mode": "columns",
+              "valueLabel": "address"
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "from": 0,
+                  "result": {
+                    "color": "purple",
+                    "index": 0
+                  },
+                  "to": 0
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 1,
+                  "result": {
+                    "color": "yellow",
+                    "index": 1
+                  },
+                  "to": 1
+                },
+                "type": "range"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 8,
+          "x": 0,
+          "y": 6
+        },
+        "id": 15,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "text": {},
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_consensus_tip_height{instance=\"$hosts\"}",
+            "format": "time_series",
+            "instant": false,
+            "interval": "",
+            "legendFormat": "{{ instance }}",
+            "refId": "A"
+          }
+        ],
+        "title": "Block Height",
+        "transformations": [],
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "mSC"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 21,
+          "y": 11
+        },
+        "id": 79,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_txpool_fee{instance=\"$hosts\"} / 1000000000000000000000",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "TxPool Fee",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 0,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 0,
+          "y": 16
+        },
+        "id": 82,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_txpool_numtxns_v1{instance=\"$hosts\"}",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "TxPool Num Txns v1",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "<WALLETDUID>"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 0,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 4,
+          "x": 4,
+          "y": 16
+        },
+        "id": 83,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "8.4.4",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "<WALLETDUID>"
+            },
+            "exemplar": true,
+            "expr": "walletd_txpool_numtxns_v2{instance=\"$hosts\"}",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "TxPool Num Txns v2",
+        "type": "stat"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "localhost:9982",
+            "value": "localhost:9982"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<WALLETDUID>"
+          },
+          "definition": "walletd_consensus_network{network=\"$network\"}",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "hosts",
+          "options": [],
+          "query": {
+            "query": "walletd_consensus_network{network=\"$network\"}",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 2,
+          "regex": ".*?instance=\\\"(.*?)\\\".*",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "anagami",
+            "value": "anagami"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<WALLETDUID>"
+          },
+          "definition": "walletd_consensus_network",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "network",
+          "options": [],
+          "query": {
+            "query": "walletd_consensus_network",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": ".*?network=\\\"(.*?)\\\".*",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "mywallet",
+            "value": "mywallet"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<WALLETDUID>"
+          },
+          "definition": "walletd_wallet_balance_siacoins",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "wallets",
+          "options": [],
+          "query": {
+            "query": "walletd_wallet_balance_siacoins",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": ".*?name=\\\"(.*?)\\\".*",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "walletd",
+    "uid": null,
+    "version": 13,
+    "weekStart": ""
+  }
