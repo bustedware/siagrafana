@@ -1,12 +1,7 @@
 {
     "hostd_hosts": ["localhost:9880"],
     "renterd_hosts": ["localhost:9980"],
-    "walletd_hosts": [
-        {
-            "http": "localhost:9980",
-            "prometheus": "localhost:9982"
-        }
-    ],
+    "walletd_hosts": ["localhost:9982"],
     "grafana_host": "http://grafana:3000",
     "grafana_api_token": "***",
     "hostd_meta": {
@@ -32,7 +27,6 @@
         "apipwd": "hostsarecool",
         "endpoints": [
             "/prometheus/bus/alerts",
-            "/prometheus/bus/autopilots",
             "/prometheus/bus/buckets",
             "/prometheus/bus/consensus/network",
             "/prometheus/bus/consensus/state",
