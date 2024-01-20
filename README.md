@@ -61,6 +61,8 @@ prometheus --config.file="prometheus.renterd.yml" --web.listen-address="0.0.0.0:
 
 #### Donations
 
+Thank you for your support!
+
 **SIA**: `1d2873a328df4f998185a46ace392279c9d9170d9e3d6ce5c83da7c0b1c681576411b010898e`
 
 Scan it with your crypto wallet:
