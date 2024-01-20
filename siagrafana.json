@@ -1,7 +1,7 @@
 {
-    "hostd_hosts": ["localhost:9880"],
-    "renterd_hosts": ["localhost:9980"],
-    "walletd_hosts": ["localhost:9982"],
+    "hostd_hosts": ["hostd:9985"],
+    "renterd_hosts": ["renterd:9982"],
+    "walletd_hosts": ["walletd:9982"],
     "grafana_host": "http://grafana:3000",
     "grafana_api_token": "***",
     "hostd_meta": {

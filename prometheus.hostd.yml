@@ -12,7 +12,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_state_consensus
     metrics_path: /prometheus/state/consensus
@@ -21,7 +21,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_syncer_address
     metrics_path: /prometheus/syncer/address
@@ -30,7 +30,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_syncer_peers
     metrics_path: /prometheus/syncer/peers
@@ -39,7 +39,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_alerts
     metrics_path: /prometheus/alerts
@@ -48,7 +48,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_settings
     metrics_path: /prometheus/settings
@@ -57,7 +57,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_metrics
     metrics_path: /prometheus/metrics
@@ -66,7 +66,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_accounts
     metrics_path: /prometheus/accounts
@@ -75,7 +75,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_volumes
     metrics_path: /prometheus/volumes
@@ -84,7 +84,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_sessions
     metrics_path: /prometheus/sessions
@@ -93,7 +93,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_tpool_fee
     metrics_path: /prometheus/tpool/fee
@@ -102,7 +102,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_wallet
     metrics_path: /prometheus/wallet
@@ -111,7 +111,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_wallet_transactions
     metrics_path: /prometheus/wallet/transactions
@@ -120,7 +120,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 
   - job_name: hostd_wallet_pending
     metrics_path: /prometheus/wallet/pending
@@ -129,5 +129,5 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9880
+        - hostd:9985
 

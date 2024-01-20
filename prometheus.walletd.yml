@@ -12,7 +12,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_wallets_localhost_9982_mywallet_events
     metrics_path: /prometheus/wallets/mywallet/events
@@ -24,7 +24,7 @@ scrape_configs:
       limit: [100]
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_consensus_network
     metrics_path: /prometheus/consensus/network
@@ -33,7 +33,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_consensus_tip
     metrics_path: /prometheus/consensus/tip
@@ -42,7 +42,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_syncer_peers
     metrics_path: /prometheus/syncer/peers
@@ -51,7 +51,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_txpool_transactions
     metrics_path: /prometheus/txpool/transactions
@@ -60,7 +60,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
   - job_name: walletd_txpool_fee
     metrics_path: /prometheus/txpool/fee
@@ -69,5 +69,5 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - localhost:9982
+        - walletd:9982
 
