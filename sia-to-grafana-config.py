@@ -1,21 +1,25 @@
 import requests, json, re, sys
 
-token = "***"
-headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Bearer " + token}
+with open("siagrafana.json", 'r') as json_file:
+    siahosts = json.load(json_file)
+
+grafanaBaseUrl = siahosts['grafana_host']
+headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Bearer " + siahosts['grafana_api_token']}
+
 
 def grafanaGetAPIKeys():
-    url = "http://grafana:3000/api/auth/keys"
+    url = grafanaBaseUrl + "/api/auth/keys"
     r = requests.get(url, headers=headers)
     return r.json()
 
 def grafanaGetDataSources():
-    url = "http://grafana:3000/api/datasources"
+    url = grafanaBaseUrl + "/api/datasources"
     r = requests.get(url, headers=headers)
     return r.json()
 
 def grafanaGetDashboards():
     highest_id = 0
-    url = "http://grafana:3000/api/search?query="
+    url = grafanaBaseUrl + "/api/search?query="
     r = requests.get(url, headers=headers)
     dashboards = {
         d['title']:  {"id": d["id"], "uid": d["uid"]}
@@ -42,7 +46,7 @@ def grafanaManageDashboard(dashboard):
         "message": "created by sia automation",
         "overwrite": True
     }
-    url = "http://grafana:3000/api/dashboards/db"
+    url = grafanaBaseUrl + "/api/dashboards/db"
     r = requests.post(url, headers=headers,data=json.dumps(payload))
     resp = r.json()
     if 'message' in resp:
@@ -76,7 +80,6 @@ def grafanaCreateSiaDashboard(siaservice, dashboard_meta = None):
 # services = ['hostd','renterd','walletd']
 services = ['hostd', 'walletd']
 datasources = grafanaGetSiaDataSources()
-print(datasources)
 highest_id, dashboards = grafanaGetDashboards()
 siadashboards = {'hostd':None,'renterd':None,'walletd':None}
 for key in dashboards.keys():

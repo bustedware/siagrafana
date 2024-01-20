@@ -1,7 +1,7 @@
 import requests, json
 from requests.auth import HTTPBasicAuth
 
-with open("siahosts.json", 'r') as json_file:
+with open("siagrafana.json", 'r') as json_file:
     siahosts = json.load(json_file)
 
 config_header = """# sia global config
