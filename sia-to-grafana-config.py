@@ -35,9 +35,9 @@ def grafanaGetSiaDataSources():
     datasources = {
         d['name']:  d["uid"]
         for d in datasources
-        if d["name"] in ['hostd','renterd','walletd']
+        if d["name"] in ['hostd','renterd','walletd','sia']
     }
-    return datasources
+    return (datasources,{'sia': datasources['sia']})['sia' in datasources]
 
 def grafanaManageDashboard(dashboard):
     payload = {
@@ -73,18 +73,27 @@ def generateSiaDashboard(siaservice, dsid, dashboard_meta = None):
         json_file.write(json.dumps(dashboard_json,indent=4))
     return dashboard_json
 
-def grafanaCreateSiaDashboard(siaservice, dashboard_meta = None):
-    dashboard = generateSiaDashboard(siaservice, datasources[siaservice], dashboard_meta)
+def grafanaCreateSiaDashboard(datasources, siaservice, dashboard_meta = None):
+    ds = ""
+    if 'sia' in datasources:
+        ds = datasources['sia']
+    else:
+        ds = datasources[siaservice]
+    dashboard = generateSiaDashboard(siaservice, ds, dashboard_meta)
     return grafanaManageDashboard(dashboard)
+
+def getSiaDashboardIDs(dashboards):
+    siadashboards = {'hostd':None,'renterd':None,'walletd':None}
+    for key in dashboards.keys():
+        if key in services:
+            siadashboards[key] = dashboards[key]
+    return siadashboards
 
 # services = ['hostd','renterd','walletd']
 services = ['hostd', 'walletd']
 datasources = grafanaGetSiaDataSources()
 highest_id, dashboards = grafanaGetDashboards()
-siadashboards = {'hostd':None,'renterd':None,'walletd':None}
-for key in dashboards.keys():
-     if key in services:
-        siadashboards[key] = dashboards[key]
+siadashboards = getSiaDashboardIDs(dashboards)
 
 for service in services:
-    grafanaCreateSiaDashboard(service, siadashboards[service])
+    grafanaCreateSiaDashboard(datasources, service, siadashboards[service])

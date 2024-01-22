@@ -783,7 +783,7 @@
         "type": "stat"
       }
     ],
-    "refresh": "",
+    "refresh": "30s",
     "schemaVersion": 35,
     "style": "dark",
     "tags": [],
