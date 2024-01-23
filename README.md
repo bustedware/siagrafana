@@ -15,12 +15,12 @@
 
 For a detailed guide continue reading this document
 
-## Requirements
+# Requirements
 These are the versions of Prometheus and Grafana I ran during development. It's possible it will work with other versions.
 - Prometheus 2.47.1
 - Grafana v8.4.4
 
-## Dashboards
+# Dashboards
 ### hostd
 ![alt text](assets/screenshots/dashboard.hostd.png)
 
@@ -30,7 +30,7 @@ These are the versions of Prometheus and Grafana I ran during development. It's 
 ### walletd
 ![alt text](assets/screenshots/dashboard.walletd.png)
 
-## Prometheus Data Collection
+# Prometheus Data Collection
 1. Review the array of hosts in `siagrafana.json`. Configure `hostd_hosts`, `renterd_hosts`, and `walletd_hosts` according to your infrastructure. You can ignore `grafana_host` for now.
 
 2. Run `python generate-configs.py` to generate hostd, renterd, walletd, and combined prometheus yml configurations.
@@ -53,7 +53,7 @@ Example prometheus command running for combind services
 prometheus --config.file="prometheus.yml" --web.listen-address="0.0.0.0:9090" --storage.tsdb.path="sia"
 ```
 
-## Grafana Datasources
+# Grafana Datasources
 The `generate-dashboards.py` script will search for datasources in Grafana named `hostd`, `renterd`, `walletd`, and `sia`. If any datasources are named `sia`, the dashboards that are created will all use this datasource. If `sia` is not a present datasource, the dashboards are created with their respectively named datasource `hostd`, `renterd`, and `walletd`
 
 The datasources **must** be named `hostd`, `renterd`, `walletd`, or `sia`.
@@ -67,7 +67,7 @@ To create a grafana datasource:
 6. Near the button, for `HTTP Method` select `GET`
 7. Click the blue `Save & test` button at the bottom
 
-## Grafana Dashboards
+# Grafana Dashboards
 The `generate-dashboards.py` script will use the `grafana.<service>.template.json` files as templates when making API calls to Grafana for creating dashboards. Any updates made to the dashboards within the Grafana UI can be brought back to these template files. See the updating templates section for more details.
 
 Follow these steps to create dashboards in Grafana for each service that has any hosts defined in `siagrafana.json`:
@@ -91,28 +91,28 @@ Follow these steps to create dashboards in Grafana for each service that has any
     - grafana.renterd.json (soon)
     - grafana.walletd.json
 
-## Updating Dashboard Templates
+# Updating Dashboard Templates
 After making changes to a dashboard you can export those changes and save it in the `grafana.<service>.template.json` file after making the following updates to it:
 1. `"id": null` root level of document
 2. `"uid": null` root level of document
 3. All of the `datasource.uid` should be set to `"uid": "<DSID>"`
 
-#### Donations
+# Donations
 
 Thank you for your support!
 
 **SIA**: `1d2873a328df4f998185a46ace392279c9d9170d9e3d6ce5c83da7c0b1c681576411b010898e`
 
-![BTC QR code](donate/sia.png)
+![BTC QR code](assets/donate/sia.png)
 
 ---------------------------------------------
 
 **BTC**: `3AeQ5E9g7yyGqhZD44Swdh694Lp9xLTo5q`
 
-![BTC QR code](donate/btc.png)
+![BTC QR code](assets/donate/btc.png)
 
 ---------------------------------------------
 
 **ETH**: `0x03b1dE4f3Fa5894902F77D7AB92c58b7edD40456`
 
-![BTC QR code](donate/eth.png)
+![BTC QR code](assets/donate/eth.png)
