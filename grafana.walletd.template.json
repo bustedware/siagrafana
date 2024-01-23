@@ -23,7 +23,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -71,7 +71,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_wallet_balance_siacoins{instance=\"$hosts\"} / 1000000000000000000000000",
@@ -86,7 +86,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -134,7 +134,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_wallet_balance_siafunds{instance=\"$hosts\"}  ",
@@ -149,7 +149,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -319,7 +319,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": false,
             "expr": "+walletd_wallet_event_transaction_total{instance=\"$hosts\"} / 1000000000000000000000",
@@ -366,7 +366,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -478,7 +478,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": false,
             "expr": "walletd_syncer_peer{instance=\"$hosts\"}",
@@ -508,7 +508,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -578,7 +578,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_consensus_tip_height{instance=\"$hosts\"}",
@@ -596,7 +596,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -644,7 +644,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_txpool_fee{instance=\"$hosts\"} / 1000000000000000000000",
@@ -659,7 +659,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -707,7 +707,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_txpool_numtxns_v1{instance=\"$hosts\"}",
@@ -722,7 +722,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "<WALLETDUID>"
+          "uid": "<DSID>"
         },
         "fieldConfig": {
           "defaults": {
@@ -770,7 +770,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "<WALLETDUID>"
+              "uid": "<DSID>"
             },
             "exemplar": true,
             "expr": "walletd_txpool_numtxns_v2{instance=\"$hosts\"}",
@@ -797,7 +797,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "<WALLETDUID>"
+            "uid": "<DSID>"
           },
           "definition": "walletd_consensus_network{network=\"$network\"}",
           "hide": 0,
@@ -823,7 +823,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "<WALLETDUID>"
+            "uid": "<DSID>"
           },
           "definition": "walletd_consensus_network",
           "hide": 0,
@@ -849,7 +849,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "<WALLETDUID>"
+            "uid": "<DSID>"
           },
           "definition": "walletd_wallet_balance_siacoins",
           "hide": 0,

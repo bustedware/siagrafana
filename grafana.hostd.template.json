@@ -23,7 +23,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -93,7 +93,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_consensus_state_chain_index_height{instance=\"$hostdhost\"}",
@@ -111,7 +111,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -159,7 +159,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_balance{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -174,7 +174,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -298,7 +298,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_alert{instance=\"$hostdhost\"}",
@@ -333,7 +333,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -444,7 +444,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_wallet_transaction_total{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -477,7 +477,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -552,7 +552,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "sum by (address) (hostd_syncer_peer{instance=\"$hostdhost\"})",
@@ -569,7 +569,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -617,7 +617,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "sum (hostd_syncer_peer{instance=\"$hostdhost\"})",
@@ -635,7 +635,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -747,7 +747,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_syncer_address{instance=\"$hostdhost\"}",
@@ -777,7 +777,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -889,7 +889,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_settings_revision{instance=\"$hostdhost\"}",
@@ -932,7 +932,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -980,7 +980,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
@@ -998,7 +998,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1046,7 +1046,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
@@ -1064,7 +1064,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1112,7 +1112,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1130,7 +1130,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1178,7 +1178,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1196,7 +1196,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1244,7 +1244,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1262,7 +1262,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1310,7 +1310,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"}",
@@ -1328,7 +1328,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1376,7 +1376,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}",
@@ -1394,7 +1394,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1465,7 +1465,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
@@ -1479,7 +1479,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"}[5m])  / 1000000000000000000000000",
@@ -1491,7 +1491,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"}[5m])  / 1000000000000000000000000",
@@ -1503,7 +1503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1515,7 +1515,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1527,7 +1527,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1539,7 +1539,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1551,7 +1551,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
@@ -1565,7 +1565,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1577,7 +1577,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1589,7 +1589,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1601,7 +1601,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1613,7 +1613,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1625,7 +1625,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
@@ -1655,7 +1655,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1703,7 +1703,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1721,7 +1721,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1769,7 +1769,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1787,7 +1787,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1902,7 +1902,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1915,7 +1915,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
@@ -1945,7 +1945,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -1993,7 +1993,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_storage_physical_sectors{instance=\"$hostdhost\"} * 0.0041849148418491",
@@ -2011,7 +2011,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2059,7 +2059,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_registry_entries{instance=\"$hostdhost\"} * 113",
@@ -2077,7 +2077,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2148,7 +2148,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_storage_contract_sectors{instance=\"$hostdhost\"} * 0.0041849148418491",
@@ -2161,7 +2161,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_storage_physical_sectors{instance=\"$hostdhost\"} * 0.0041849148418491",
@@ -2173,7 +2173,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_storage_temp_sectors{instance=\"$hostdhost\"}",
@@ -2185,7 +2185,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_registry_entries{instance=\"$hostdhost\"} * 113",
@@ -2215,7 +2215,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2263,7 +2263,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_storage_reads{instance=\"$hostdhost\"}",
@@ -2281,7 +2281,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2329,7 +2329,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_storage_writes{instance=\"$hostdhost\"}",
@@ -2347,7 +2347,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2395,7 +2395,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_registry_reads{instance=\"$hostdhost\"}",
@@ -2413,7 +2413,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2461,7 +2461,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_registry_writes{instance=\"$hostdhost\"}",
@@ -2479,7 +2479,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2550,7 +2550,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_storage_reads{instance=\"$hostdhost\"}[5m])",
@@ -2563,7 +2563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_storage_writes{instance=\"$hostdhost\"}[5m])",
@@ -2577,7 +2577,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_registry_reads{instance=\"$hostdhost\"}[5m])",
@@ -2589,7 +2589,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "delta(hostd_metrics_registry_writes{instance=\"$hostdhost\"}[5m])",
@@ -2619,7 +2619,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2667,7 +2667,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_contracts_active{instance=\"$hostdhost\"}",
@@ -2685,7 +2685,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2733,7 +2733,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_contracts_successful{instance=\"$hostdhost\"}",
@@ -2751,7 +2751,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2799,7 +2799,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_contracts_failed{instance=\"$hostdhost\"}",
@@ -2817,7 +2817,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -2891,7 +2891,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_successful{instance=\"$hostdhost\"}",
@@ -2903,7 +2903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_active{instance=\"$hostdhost\"}",
@@ -2915,7 +2915,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_pending{instance=\"$hostdhost\"}",
@@ -2927,7 +2927,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_rejected{instance=\"$hostdhost\"}",
@@ -2939,7 +2939,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_failed{instance=\"$hostdhost\"}",
@@ -2951,7 +2951,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_contracts_successful{instance=\"$hostdhost\"} + hostd_metrics_contracts_active{instance=\"$hostdhost\"} + hostd_metrics_contracts_pending{instance=\"$hostdhost\"} + hostd_metrics_contracts_rejected{instance=\"$hostdhost\"} + hostd_metrics_contracts_failed{instance=\"$hostdhost\"}",
@@ -2981,7 +2981,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3030,7 +3030,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "(hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
@@ -3048,7 +3048,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3097,7 +3097,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"} / 1000000000000",
@@ -3115,7 +3115,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3164,7 +3164,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
@@ -3182,7 +3182,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3231,7 +3231,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "((hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000) * hostd_settings_collateral_multiplier{instance=\"$hostdhost\"}",
@@ -3249,7 +3249,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3298,7 +3298,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
@@ -3316,7 +3316,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3365,7 +3365,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_settings_sectoraccess_price{instance=\"$hostdhost\"} / 100000000000000000",
@@ -3383,7 +3383,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3432,7 +3432,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": false,
           "expr": "hostd_settings_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
@@ -3450,7 +3450,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3521,7 +3521,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "(hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
@@ -3534,7 +3534,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"} / 1000000000000",
@@ -3546,7 +3546,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
@@ -3558,7 +3558,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "((hostd_settings_max_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000) / 30) * 10",
@@ -3570,7 +3570,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
@@ -3582,7 +3582,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_settings_sectoraccess_price{instance=\"$hostdhost\"} / 100000000000000000",
@@ -3594,7 +3594,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_settings_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
@@ -3624,7 +3624,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3681,7 +3681,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_volume_used_sectors{instance=\"$hostdhost\"} / hostd_volume_total_sectors{instance=\"$hostdhost\"} * 100",
@@ -3697,7 +3697,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3743,7 +3743,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_volume_successful_reads{instance=\"$hostdhost\"}",
@@ -3761,7 +3761,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3807,7 +3807,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_volume_failed_reads{instance=\"$hostdhost\"}",
@@ -3825,7 +3825,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3871,7 +3871,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_volume_successful_writes{instance=\"$hostdhost\"}",
@@ -3889,7 +3889,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "<HOSTDUID>"
+        "uid": "<DSID>"
       },
       "fieldConfig": {
         "defaults": {
@@ -3935,7 +3935,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "<HOSTDUID>"
+            "uid": "<DSID>"
           },
           "exemplar": true,
           "expr": "hostd_volume_failed_writes{instance=\"$hostdhost\"}",
@@ -3965,7 +3965,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "<HOSTDUID>"
+          "uid": "<DSID>"
         },
         "definition": "hostd_host_state{network=\"$network\"}",
         "hide": 0,
@@ -3991,7 +3991,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "<HOSTDUID>"
+          "uid": "<DSID>"
         },
         "definition": "hostd_host_state",
         "hide": 0,

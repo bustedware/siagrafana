@@ -4,7 +4,7 @@ with open("siagrafana.json", 'r') as json_file:
     siahosts = json.load(json_file)
 
 grafanaBaseUrl = siahosts['grafana_host']
-headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Bearer " + siahosts['grafana_api_token']}
+headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Bearer " + siahosts['grafana_api_key']}
 
 
 def grafanaGetAPIKeys():
@@ -61,7 +61,7 @@ def grafanaManageDashboard(dashboard):
 def generateSiaDashboard(siaservice, dsid, dashboard_meta = None):
     with open('grafana.'+siaservice+'.template.json', 'r') as json_file:
         data = json_file.read()
-    substring_to_replace = "<"+siaservice.upper()+"UID>"
+    substring_to_replace = "<DSID>"
     dashboard_json = json.loads(re.sub(substring_to_replace, dsid, str(data)))
     if dashboard_meta == None:
         dashboard_json['id'] = None
