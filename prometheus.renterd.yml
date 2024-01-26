@@ -23,15 +23,6 @@ scrape_configs:
       - targets:
         - renterd:9982
 
-  - job_name: renterd_bus_consensus_network
-    metrics_path: /prometheus/bus/consensus/network
-    basic_auth:
-      username: ''
-      password: 'hostsarecool'
-    static_configs:
-      - targets:
-        - renterd:9982
-
   - job_name: renterd_bus_consensus_state
     metrics_path: /prometheus/bus/consensus/state
     basic_auth:
@@ -232,6 +223,33 @@ scrape_configs:
 
   - job_name: renterd_autopilot_state
     metrics_path: /prometheus/autopilot/state
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - renterd:9982
+
+  - job_name: renterd_worker_memory
+    metrics_path: /prometheus/worker/memory
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - renterd:9982
+
+  - job_name: renterd_worker_stats_downloads
+    metrics_path: /prometheus/worker/stats/downloads
+    basic_auth:
+      username: ''
+      password: 'hostsarecool'
+    static_configs:
+      - targets:
+        - renterd:9982
+
+  - job_name: renterd_worker_stats_uploads
+    metrics_path: /prometheus/worker/stats/uploads
     basic_auth:
       username: ''
       password: 'hostsarecool'

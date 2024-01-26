@@ -3,7 +3,7 @@
     "renterd_hosts": ["renterd:9982"],
     "walletd_hosts": ["walletd:9982"],
     "grafana_host": "http://grafana:3000",
-    "grafana_api_token": "***",
+    "grafana_api_key": "***",
     "hostd_meta": {
         "apipwd": "hostsarecool",
         "endpoints": [
@@ -28,7 +28,6 @@
         "endpoints": [
             "/prometheus/bus/alerts",
             "/prometheus/bus/buckets",
-            "/prometheus/bus/consensus/network",
             "/prometheus/bus/consensus/state",
             "/prometheus/bus/contracts",
             "/prometheus/bus/contracts/prunable",
@@ -51,7 +50,10 @@
             "/prometheus/bus/wallet/outputs",
             "/prometheus/bus/wallet/pending",
             "/prometheus/bus/wallet/transactions",
-            "/prometheus/autopilot/state"
+            "/prometheus/autopilot/state",
+            "/prometheus/worker/memory",
+            "/prometheus/worker/stats/downloads",
+            "/prometheus/worker/stats/uploads"
         ]
     },
     "walletd_meta": {

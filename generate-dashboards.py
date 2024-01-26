@@ -37,7 +37,10 @@ def grafanaGetSiaDataSources():
         for d in datasources
         if d["name"] in ['hostd','renterd','walletd','sia']
     }
-    return (datasources,{'sia': datasources['sia']})['sia' in datasources]
+    if 'sia' in datasources:
+        return {'sia': datasources['sia']}
+    else:
+        return datasources
 
 def grafanaManageDashboard(dashboard):
     payload = {
@@ -89,8 +92,7 @@ def getSiaDashboardIDs(dashboards):
             siadashboards[key] = dashboards[key]
     return siadashboards
 
-# services = ['hostd','renterd','walletd']
-services = ['hostd', 'walletd']
+services = ['hostd', 'renterd', 'walletd']
 datasources = grafanaGetSiaDataSources()
 highest_id, dashboards = grafanaGetDashboards()
 siadashboards = getSiaDashboardIDs(dashboards)

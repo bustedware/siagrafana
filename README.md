@@ -96,6 +96,7 @@ After making changes to a dashboard you can export those changes and save it in 
 1. `"id": null` root level of document
 2. `"uid": null` root level of document
 3. All of the `datasource.uid` should be set to `"uid": "<DSID>"`
+4. You can remove the `annoations` field from the top of the document
 
 # Donations
 
