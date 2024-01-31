@@ -3,7 +3,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1706481118449,
+  "iteration": 1706745296239,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -753,7 +753,7 @@
       "id": 83,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
+        "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
@@ -851,6 +851,6 @@
   "timezone": "",
   "title": "walletd",
   "uid": null,
-  "version": 13,
+  "version": 23,
   "weekStart": ""
 }
