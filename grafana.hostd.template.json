@@ -3,7 +3,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1706745222813,
+  "iteration": 1706745455652,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -19,94 +19,6 @@
       "panels": [],
       "title": "Node",
       "type": "row"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "<DSID>"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "from": 0,
-                "result": {
-                  "color": "purple",
-                  "index": 0
-                },
-                "to": 0
-              },
-              "type": "range"
-            },
-            {
-              "options": {
-                "from": 1,
-                "result": {
-                  "color": "yellow",
-                  "index": 1
-                },
-                "to": 1
-              },
-              "type": "range"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 8,
-        "x": 0,
-        "y": 1
-      },
-      "id": 15,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "8.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "exemplar": true,
-          "expr": "hostd_consensus_state_chain_index_height{instance=\"$hostdhost\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{ instance }}",
-          "refId": "A"
-        }
-      ],
-      "title": "Block Height",
-      "transformations": [],
-      "type": "stat"
     },
     {
       "datasource": {
@@ -134,9 +46,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 17,
+        "h": 5,
         "w": 8,
-        "x": 8,
+        "x": 0,
         "y": 1
       },
       "id": 9,
@@ -170,6 +82,242 @@
       ],
       "title": "Balance",
       "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": false
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "job"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "instance"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "__name__"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 8,
+        "x": 8,
+        "y": 1
+      },
+      "id": 77,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_wallet_transaction_total{instance=\"$hostdhost\"} / 1000000000000000000000000",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Transactions",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Time": 1,
+              "Value": 4,
+              "instance": 2,
+              "job": 3,
+              "txid": 0
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "displayMode": "auto"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 18,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 8,
+      "options": {
+        "footer": {
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "sum by (address) (hostd_syncer_peer{instance=\"$hostdhost\"})",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Syncer Peers",
+      "type": "table"
     },
     {
       "datasource": {
@@ -276,9 +424,9 @@
         ]
       },
       "gridPos": {
-        "h": 17,
+        "h": 8,
         "w": 4,
-        "x": 16,
+        "x": 20,
         "y": 1
       },
       "id": 76,
@@ -340,212 +488,63 @@
           "color": {
             "mode": "thresholds"
           },
-          "custom": {
-            "align": "left",
-            "displayMode": "auto"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
+          "mappings": [
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "color": "purple",
+                  "index": 0
+                },
+                "to": 0
               },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Time"
+              "type": "range"
             },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": false
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "job"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "instance"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "__name__"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 17,
-        "w": 4,
-        "x": 20,
-        "y": 1
-      },
-      "id": 77,
-      "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
+            {
+              "options": {
+                "from": 1,
+                "result": {
+                  "color": "yellow",
+                  "index": 1
+                },
+                "to": 1
+              },
+              "type": "range"
+            }
           ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "8.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "exemplar": false,
-          "expr": "hostd_wallet_transaction_total{instance=\"$hostdhost\"} / 1000000000000000000000000",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Transactions",
-      "transformations": [
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {},
-            "indexByName": {
-              "Time": 1,
-              "Value": 4,
-              "instance": 2,
-              "job": 3,
-              "txid": 0
-            },
-            "renameByName": {}
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "<DSID>"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "displayMode": "auto"
-          },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Time"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 4,
+        "h": 13,
+        "w": 8,
         "x": 0,
-        "y": 18
+        "y": 6
       },
-      "id": 8,
+      "id": 15,
       "options": {
-        "footer": {
-          "fields": "",
-          "reducer": [
-            "sum"
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
           ],
-          "show": false
+          "fields": "",
+          "values": false
         },
-        "showHeader": true
+        "text": {},
+        "textMode": "auto"
       },
       "pluginVersion": "8.4.4",
       "targets": [
@@ -554,17 +553,18 @@
             "type": "prometheus",
             "uid": "<DSID>"
           },
-          "exemplar": false,
-          "expr": "sum by (address) (hostd_syncer_peer{instance=\"$hostdhost\"})",
-          "format": "table",
-          "instant": true,
+          "exemplar": true,
+          "expr": "hostd_consensus_state_chain_index_height{instance=\"$hostdhost\"}",
+          "format": "time_series",
+          "instant": false,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{ instance }}",
           "refId": "A"
         }
       ],
-      "title": "Syncer Peers",
-      "type": "table"
+      "title": "Block Height",
+      "transformations": [],
+      "type": "stat"
     },
     {
       "datasource": {
@@ -591,10 +591,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 4,
         "w": 4,
-        "x": 4,
-        "y": 18
+        "x": 20,
+        "y": 9
       },
       "id": 31,
       "options": {
@@ -726,12 +726,12 @@
         ]
       },
       "gridPos": {
-        "h": 4,
+        "h": 3,
         "w": 4,
-        "x": 8,
-        "y": 18
+        "x": 20,
+        "y": 13
       },
-      "id": 16,
+      "id": 71,
       "options": {
         "footer": {
           "fields": "",
@@ -750,7 +750,7 @@
             "uid": "<DSID>"
           },
           "exemplar": false,
-          "expr": "hostd_syncer_address{instance=\"$hostdhost\"}",
+          "expr": "hostd_settings_revision{instance=\"$hostdhost\"}",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -759,7 +759,7 @@
           "refId": "A"
         }
       ],
-      "title": "Syncer Address",
+      "title": "Net Address",
       "transformations": [
         {
           "id": "labelsToFields",
@@ -868,12 +868,12 @@
         ]
       },
       "gridPos": {
-        "h": 4,
+        "h": 3,
         "w": 4,
-        "x": 8,
-        "y": 22
+        "x": 20,
+        "y": 16
       },
-      "id": 71,
+      "id": 16,
       "options": {
         "footer": {
           "fields": "",
@@ -892,7 +892,7 @@
             "uid": "<DSID>"
           },
           "exemplar": false,
-          "expr": "hostd_settings_revision{instance=\"$hostdhost\"}",
+          "expr": "hostd_syncer_address{instance=\"$hostdhost\"}",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -901,7 +901,7 @@
           "refId": "A"
         }
       ],
-      "title": "Net Address",
+      "title": "Syncer Address",
       "transformations": [
         {
           "id": "labelsToFields",
@@ -922,7 +922,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 19
       },
       "id": 27,
       "panels": [
@@ -941,7 +941,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -953,7 +954,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 2
+            "y": 27
           },
           "id": 17,
           "options": {
@@ -1006,7 +1007,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1018,7 +1020,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 2
+            "y": 27
           },
           "id": 68,
           "options": {
@@ -1071,7 +1073,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1083,7 +1086,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 2
+            "y": 27
           },
           "id": 19,
           "options": {
@@ -1136,7 +1139,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1148,7 +1152,7 @@
             "h": 5,
             "w": 3,
             "x": 9,
-            "y": 2
+            "y": 27
           },
           "id": 20,
           "options": {
@@ -1201,7 +1205,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1213,7 +1218,7 @@
             "h": 5,
             "w": 3,
             "x": 12,
-            "y": 2
+            "y": 27
           },
           "id": 21,
           "options": {
@@ -1266,7 +1271,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1278,7 +1284,7 @@
             "h": 5,
             "w": 3,
             "x": 15,
-            "y": 2
+            "y": 27
           },
           "id": 22,
           "options": {
@@ -1331,7 +1337,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1343,7 +1350,7 @@
             "h": 5,
             "w": 3,
             "x": 18,
-            "y": 2
+            "y": 27
           },
           "id": 23,
           "options": {
@@ -1424,7 +1431,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -1435,7 +1443,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 7
+            "y": 32
           },
           "id": 28,
           "options": {
@@ -1638,7 +1646,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 20
       },
       "id": 35,
       "panels": [
@@ -1924,7 +1932,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 21
       },
       "id": 40,
       "panels": [
@@ -1943,7 +1951,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -1955,7 +1964,7 @@
             "h": 6,
             "w": 4,
             "x": 0,
-            "y": 4
+            "y": 29
           },
           "id": 32,
           "options": {
@@ -2008,7 +2017,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -2020,7 +2030,7 @@
             "h": 6,
             "w": 4,
             "x": 4,
-            "y": 4
+            "y": 29
           },
           "id": 37,
           "options": {
@@ -2073,7 +2083,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "light-green"
+                    "color": "light-green",
+                    "value": null
                   },
                   {
                     "color": "semi-dark-green",
@@ -2097,7 +2108,7 @@
             "h": 3,
             "w": 16,
             "x": 8,
-            "y": 4
+            "y": 29
           },
           "id": 12,
           "options": {
@@ -2145,7 +2156,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2156,7 +2168,7 @@
             "h": 3,
             "w": 4,
             "x": 8,
-            "y": 7
+            "y": 32
           },
           "id": 38,
           "options": {
@@ -2208,7 +2220,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2219,7 +2232,7 @@
             "h": 3,
             "w": 4,
             "x": 12,
-            "y": 7
+            "y": 32
           },
           "id": 64,
           "options": {
@@ -2270,7 +2283,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   }
                 ]
               }
@@ -2281,7 +2295,7 @@
             "h": 3,
             "w": 4,
             "x": 16,
-            "y": 7
+            "y": 32
           },
           "id": 63,
           "options": {
@@ -2333,7 +2347,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red"
+                    "color": "red",
+                    "value": null
                   }
                 ]
               }
@@ -2344,7 +2359,7 @@
             "h": 3,
             "w": 4,
             "x": 20,
-            "y": 7
+            "y": 32
           },
           "id": 65,
           "options": {
@@ -2424,7 +2439,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2435,7 +2451,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 10
+            "y": 35
           },
           "id": 62,
           "options": {
@@ -2515,7 +2531,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 22
       },
       "id": 47,
       "panels": [
@@ -2915,7 +2931,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 23
       },
       "id": 53,
       "panels": [
@@ -3274,7 +3290,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 24
       },
       "id": 57,
       "panels": [
@@ -3973,6 +3989,6 @@
   "timezone": "",
   "title": "hostd",
   "uid": null,
-  "version": 27,
+  "version": 13,
   "weekStart": ""
 }
