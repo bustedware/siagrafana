@@ -5,128 +5,145 @@ global:
   # scrape_timeout is set to the global default (10s).
 
 scrape_configs:
-  - job_name: hostd_state_host
-    metrics_path: /prometheus/state/host
+  - job_name: hostd_api_state_host
+    metrics_path: /api/state/host
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_state_consensus
-    metrics_path: /prometheus/state/consensus
+  - job_name: hostd_api_state_consensus
+    metrics_path: /api/state/consensus
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_syncer_address
-    metrics_path: /prometheus/syncer/address
+  - job_name: hostd_api_syncer_address
+    metrics_path: /api/syncer/address
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_syncer_peers
-    metrics_path: /prometheus/syncer/peers
+  - job_name: hostd_api_syncer_peers
+    metrics_path: /api/syncer/peers
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_alerts
-    metrics_path: /prometheus/alerts
+  - job_name: hostd_api_alerts
+    metrics_path: /api/alerts
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_settings
-    metrics_path: /prometheus/settings
+  - job_name: hostd_api_settings
+    metrics_path: /api/settings
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_metrics
-    metrics_path: /prometheus/metrics
+  - job_name: hostd_api_metrics
+    metrics_path: /api/metrics
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_accounts
-    metrics_path: /prometheus/accounts
+  - job_name: hostd_api_volumes
+    metrics_path: /api/volumes
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_volumes
-    metrics_path: /prometheus/volumes
+  - job_name: hostd_api_sessions
+    metrics_path: /api/sessions
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_sessions
-    metrics_path: /prometheus/sessions
+  - job_name: hostd_api_tpool_fee
+    metrics_path: /api/tpool/fee
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_tpool_fee
-    metrics_path: /prometheus/tpool/fee
+  - job_name: hostd_api_wallet
+    metrics_path: /api/wallet
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_wallet
-    metrics_path: /prometheus/wallet
+  - job_name: hostd_api_wallet_transactions
+    metrics_path: /api/wallet/transactions
     basic_auth:
       username: ''
       password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
 
-  - job_name: hostd_wallet_transactions
-    metrics_path: /prometheus/wallet/transactions
+  - job_name: hostd_api_wallet_pending
+    metrics_path: /api/wallet/pending
     basic_auth:
       username: ''
       password: 'hostsarecool'
-    static_configs:
-      - targets:
-        - hostd:9985
-
-  - job_name: hostd_wallet_pending
-    metrics_path: /prometheus/wallet/pending
-    basic_auth:
-      username: ''
-      password: 'hostsarecool'
+    params:
+      response: [prometheus]
     static_configs:
       - targets:
         - hostd:9985
