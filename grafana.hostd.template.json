@@ -3,7 +3,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1706745455652,
+  "iteration": 1707261446586,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -172,6 +172,18 @@
                 "value": true
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "txid"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 551
+              }
+            ]
           }
         ]
       },
@@ -190,7 +202,8 @@
           ],
           "show": false
         },
-        "showHeader": true
+        "showHeader": true,
+        "sortBy": []
       },
       "pluginVersion": "8.4.4",
       "targets": [
@@ -200,7 +213,7 @@
             "uid": "<DSID>"
           },
           "exemplar": false,
-          "expr": "hostd_wallet_transaction_total{instance=\"$hostdhost\"} / 1000000000000000000000000",
+          "expr": "hostd_wallet_transaction{instance=\"$hostdhost\"}",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -221,7 +234,10 @@
               "job": 3,
               "txid": 0
             },
-            "renameByName": {}
+            "renameByName": {
+              "Value": "Siacoins",
+              "txid": "Transaction ID"
+            }
           }
         }
       ],
@@ -554,7 +570,7 @@
             "uid": "<DSID>"
           },
           "exemplar": true,
-          "expr": "hostd_consensus_state_chain_index_height{instance=\"$hostdhost\"}",
+          "expr": "hostd_consensus_state_index{instance=\"$hostdhost\"}",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -941,8 +957,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -954,7 +969,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 27
+            "y": 2
           },
           "id": 17,
           "options": {
@@ -1007,8 +1022,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1020,7 +1034,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 27
+            "y": 2
           },
           "id": 68,
           "options": {
@@ -1073,8 +1087,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1086,7 +1099,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 27
+            "y": 2
           },
           "id": 19,
           "options": {
@@ -1139,8 +1152,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1152,7 +1164,7 @@
             "h": 5,
             "w": 3,
             "x": 9,
-            "y": 27
+            "y": 2
           },
           "id": 20,
           "options": {
@@ -1205,8 +1217,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1218,7 +1229,7 @@
             "h": 5,
             "w": 3,
             "x": 12,
-            "y": 27
+            "y": 2
           },
           "id": 21,
           "options": {
@@ -1271,8 +1282,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1284,7 +1294,7 @@
             "h": 5,
             "w": 3,
             "x": 15,
-            "y": 27
+            "y": 2
           },
           "id": 22,
           "options": {
@@ -1337,8 +1347,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1350,7 +1359,7 @@
             "h": 5,
             "w": 3,
             "x": 18,
-            "y": 27
+            "y": 2
           },
           "id": 23,
           "options": {
@@ -1431,8 +1440,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -1443,7 +1451,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 32
+            "y": 7
           },
           "id": 28,
           "options": {
@@ -1918,6 +1926,7 @@
               "refId": "B"
             }
           ],
+          "timeFrom": "7d",
           "title": "Collateral",
           "transformations": [],
           "type": "timeseries"
@@ -1951,12 +1960,11 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
-              "unit": "decgbytes"
+              "unit": "decbytes"
             },
             "overrides": []
           },
@@ -1964,7 +1972,7 @@
             "h": 6,
             "w": 4,
             "x": 0,
-            "y": 29
+            "y": 4
           },
           "id": 32,
           "options": {
@@ -1990,7 +1998,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_storage_physical_sectors{instance=\"$hostdhost\"} * 0.0041849148418491",
+              "expr": "hostd_metrics_storage_physical_used_bytes{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -2017,8 +2025,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -2030,7 +2037,7 @@
             "h": 6,
             "w": 4,
             "x": 4,
-            "y": 29
+            "y": 4
           },
           "id": 37,
           "options": {
@@ -2083,8 +2090,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "light-green",
-                    "value": null
+                    "color": "light-green"
                   },
                   {
                     "color": "semi-dark-green",
@@ -2108,7 +2114,7 @@
             "h": 3,
             "w": 16,
             "x": 8,
-            "y": 29
+            "y": 4
           },
           "id": 12,
           "options": {
@@ -2156,8 +2162,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -2168,7 +2173,7 @@
             "h": 3,
             "w": 4,
             "x": 8,
-            "y": 32
+            "y": 7
           },
           "id": 38,
           "options": {
@@ -2220,8 +2225,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -2232,7 +2236,7 @@
             "h": 3,
             "w": 4,
             "x": 12,
-            "y": 32
+            "y": 7
           },
           "id": 64,
           "options": {
@@ -2283,8 +2287,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red",
-                    "value": null
+                    "color": "red"
                   }
                 ]
               }
@@ -2295,7 +2298,7 @@
             "h": 3,
             "w": 4,
             "x": 16,
-            "y": 32
+            "y": 7
           },
           "id": 63,
           "options": {
@@ -2347,8 +2350,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red",
-                    "value": null
+                    "color": "red"
                   }
                 ]
               }
@@ -2359,7 +2361,7 @@
             "h": 3,
             "w": 4,
             "x": 20,
-            "y": 32
+            "y": 7
           },
           "id": 65,
           "options": {
@@ -2439,8 +2441,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -2451,7 +2452,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 35
+            "y": 10
           },
           "id": 62,
           "options": {
@@ -2517,6 +2518,7 @@
               "refId": "D"
             }
           ],
+          "timeFrom": "1d",
           "title": "Storage ",
           "transformations": [],
           "type": "timeseries"
@@ -2562,7 +2564,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 5
+            "y": 19
           },
           "id": 36,
           "options": {
@@ -2627,7 +2629,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 5
+            "y": 19
           },
           "id": 48,
           "options": {
@@ -2692,7 +2694,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 5
+            "y": 19
           },
           "id": 43,
           "options": {
@@ -2757,7 +2759,7 @@
             "h": 5,
             "w": 3,
             "x": 9,
-            "y": 5
+            "y": 19
           },
           "id": 44,
           "options": {
@@ -2849,7 +2851,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 10
+            "y": 24
           },
           "id": 45,
           "options": {
@@ -2871,7 +2873,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_storage_reads{instance=\"$hostdhost\"}[5m])",
+              "expr": "delta(hostd_metrics_storage_reads{instance=\"$hostdhost\"}[30m])",
               "hide": false,
               "instant": false,
               "interval": "",
@@ -2884,7 +2886,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_storage_writes{instance=\"$hostdhost\"}[5m])",
+              "expr": "delta(hostd_metrics_storage_writes{instance=\"$hostdhost\"}[30m])",
               "format": "time_series",
               "hide": false,
               "instant": false,
@@ -2898,7 +2900,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_registry_reads{instance=\"$hostdhost\"}[5m])",
+              "expr": "delta(hostd_metrics_registry_reads{instance=\"$hostdhost\"}[30m])",
               "hide": false,
               "interval": "",
               "legendFormat": "registry reads",
@@ -2910,13 +2912,14 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_registry_writes{instance=\"$hostdhost\"}[5m])",
+              "expr": "delta(hostd_metrics_registry_writes{instance=\"$hostdhost\"}[30m])",
               "hide": false,
               "interval": "",
               "legendFormat": "registry writes",
               "refId": "E"
             }
           ],
+          "timeFrom": "1d",
           "title": "Operations",
           "transformations": [],
           "type": "timeseries"
@@ -2962,7 +2965,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 70
+            "y": 33
           },
           "id": 42,
           "options": {
@@ -3027,7 +3030,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 70
+            "y": 33
           },
           "id": 54,
           "options": {
@@ -3092,7 +3095,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 70
+            "y": 33
           },
           "id": 50,
           "options": {
@@ -3187,7 +3190,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 75
+            "y": 38
           },
           "id": 51,
           "options": {
@@ -3276,6 +3279,7 @@
               "refId": "F"
             }
           ],
+          "timeFrom": "1d",
           "title": "Contracts",
           "transformations": [],
           "type": "timeseries"
@@ -3322,7 +3326,7 @@
             "h": 5,
             "w": 4,
             "x": 0,
-            "y": 71
+            "y": 47
           },
           "id": 69,
           "options": {
@@ -3348,7 +3352,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "(hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
+              "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -3388,7 +3392,7 @@
             "h": 5,
             "w": 3,
             "x": 4,
-            "y": 71
+            "y": 47
           },
           "id": 49,
           "options": {
@@ -3454,7 +3458,7 @@
             "h": 5,
             "w": 3,
             "x": 7,
-            "y": 71
+            "y": 47
           },
           "id": 55,
           "options": {
@@ -3520,7 +3524,7 @@
             "h": 5,
             "w": 3,
             "x": 10,
-            "y": 71
+            "y": 47
           },
           "id": 70,
           "options": {
@@ -3546,7 +3550,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "((hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000) * hostd_settings_collateral_multiplier{instance=\"$hostdhost\"}",
+              "expr": "((hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000) * hostd_settings_collateral_multiplier{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -3586,7 +3590,7 @@
             "h": 5,
             "w": 3,
             "x": 13,
-            "y": 71
+            "y": 47
           },
           "id": 72,
           "options": {
@@ -3644,7 +3648,7 @@
                   }
                 ]
               },
-              "unit": "SC / million"
+              "unit": "mSC / million"
             },
             "overrides": []
           },
@@ -3652,7 +3656,7 @@
             "h": 5,
             "w": 3,
             "x": 16,
-            "y": 71
+            "y": 47
           },
           "id": 73,
           "options": {
@@ -3678,7 +3682,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_settings_sectoraccess_price{instance=\"$hostdhost\"} / 100000000000000000",
+              "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 1000000000000000",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -3710,7 +3714,7 @@
                   }
                 ]
               },
-              "unit": "SC / million"
+              "unit": "mSC / million"
             },
             "overrides": []
           },
@@ -3718,7 +3722,7 @@
             "h": 5,
             "w": 3,
             "x": 19,
-            "y": 71
+            "y": 47
           },
           "id": 74,
           "options": {
@@ -3744,7 +3748,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_settings_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
+              "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 1000000000000000",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -3810,7 +3814,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 76
+            "y": 52
           },
           "id": 75,
           "options": {
@@ -3832,7 +3836,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "(hostd_settings_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
+              "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -3893,7 +3897,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "hostd_settings_sectoraccess_price{instance=\"$hostdhost\"} / 100000000000000000",
+              "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 100000000000000000",
               "hide": false,
               "interval": "",
               "legendFormat": "sector access",
@@ -3905,13 +3909,14 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "hostd_settings_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
+              "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
               "hide": false,
               "interval": "",
               "legendFormat": "rpc",
               "refId": "G"
             }
           ],
+          "timeFrom": "1d",
           "title": "Pricing",
           "transformations": [],
           "type": "timeseries"
@@ -3956,8 +3961,8 @@
       {
         "current": {
           "selected": false,
-          "text": "172.20.40.76:9995",
-          "value": "172.20.40.76:9995"
+          "text": "172.20.40.76:9990",
+          "value": "172.20.40.76:9990"
         },
         "datasource": {
           "type": "prometheus",

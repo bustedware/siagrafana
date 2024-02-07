@@ -7,20 +7,19 @@
     "hostd_meta": {
         "apipwd": "hostsarecool",
         "endpoints": [
-            "/prometheus/state/host",
-            "/prometheus/state/consensus",
-            "/prometheus/syncer/address",
-            "/prometheus/syncer/peers",
-            "/prometheus/alerts",
-            "/prometheus/settings",
-            "/prometheus/metrics",
-            "/prometheus/accounts",
-            "/prometheus/volumes",
-            "/prometheus/sessions",
-            "/prometheus/tpool/fee",
-            "/prometheus/wallet",
-            "/prometheus/wallet/transactions",
-            "/prometheus/wallet/pending"
+            "/api/state/host?response=prometheus",
+            "/api/state/consensus?response=prometheus",
+            "/api/syncer/address?response=prometheus",
+            "/api/syncer/peers?response=prometheus",
+            "/api/alerts?response=prometheus",
+            "/api/settings?response=prometheus",
+            "/api/metrics?response=prometheus",
+            "/api/volumes?response=prometheus",
+            "/api/sessions?response=prometheus",
+            "/api/tpool/fee?response=prometheus",
+            "/api/wallet?response=prometheus",
+            "/api/wallet/transactions?response=prometheus",
+            "/api/wallet/pending?response=prometheus"
         ]
     },
     "renterd_meta": {

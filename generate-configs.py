@@ -71,7 +71,7 @@ with open('prometheus.walletd.yml', 'w') as file:
 ## HOSTD
 hostd_jobs = ""
 for endpoint in siahosts["hostd_meta"]["endpoints"]:
-    job_name = "hostd_" + "_".join(endpoint.split("/")[2:])
+    job_name = "hostd_" + "_".join(endpoint.split("/")[1:])
     hostd_jobs = hostd_jobs + get_prometheus_job("", siahosts["hostd_meta"]["apipwd"], job_name, endpoint, siahosts["hostd_hosts"]) + "\n"
 
 with open('prometheus.hostd.yml', 'w') as file:
