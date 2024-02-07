@@ -3,7 +3,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1707261446586,
+  "iteration": 1707350030145,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -74,7 +74,7 @@
             "uid": "<DSID>"
           },
           "exemplar": true,
-          "expr": "hostd_metrics_balance{instance=\"$hostdhost\"} / 1000000000000000000000000",
+          "expr": "hostd_metrics_balance{instance=\"$hostdhost\"}",
           "interval": "",
           "legendFormat": "balance",
           "refId": "A"
@@ -182,6 +182,18 @@
               {
                 "id": "custom.width",
                 "value": 551
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Transaction ID"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 487
               }
             ]
           }
@@ -969,7 +981,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 2
+            "y": 20
           },
           "id": 17,
           "options": {
@@ -995,7 +1007,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
+              "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"})",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1034,7 +1046,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 2
+            "y": 20
           },
           "id": 68,
           "options": {
@@ -1060,7 +1072,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
+              "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"})",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1099,7 +1111,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 2
+            "y": 20
           },
           "id": 19,
           "options": {
@@ -1125,7 +1137,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1164,7 +1176,7 @@
             "h": 5,
             "w": 3,
             "x": 9,
-            "y": 2
+            "y": 20
           },
           "id": 20,
           "options": {
@@ -1190,7 +1202,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1229,7 +1241,7 @@
             "h": 5,
             "w": 3,
             "x": 12,
-            "y": 2
+            "y": 20
           },
           "id": 21,
           "options": {
@@ -1255,7 +1267,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1264,136 +1276,6 @@
             }
           ],
           "title": "Ingress",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 15,
-            "y": 2
-          },
-          "id": 22,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"}",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Registry Read",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 18,
-            "y": 2
-          },
-          "id": 23,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Registry Write",
           "transformations": [],
           "type": "stat"
         },
@@ -1451,7 +1333,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 7
+            "y": 25
           },
           "id": 28,
           "options": {
@@ -1473,7 +1355,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
+              "expr": "(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"})",
               "format": "time_series",
               "hide": true,
               "instant": false,
@@ -1487,7 +1369,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"}[5m])  / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_earned_rpc{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "earned rpc",
@@ -1499,7 +1381,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"}[5m])  / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_earned_storage{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "earned storage",
@@ -1511,7 +1393,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_earned_ingress{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "earned ingress",
@@ -1523,7 +1405,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_earned_egress{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "earned egress",
@@ -1535,31 +1417,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_registry_read{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "earned registry reads",
-              "refId": "F"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_earned_registry_write{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "earned registry writes",
-              "refId": "G"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}) / 1000000000000000000000000",
+              "expr": "(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"} + hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"})",
               "format": "time_series",
               "hide": true,
               "instant": false,
@@ -1573,7 +1431,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_potential_rpc{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "potential rpc",
@@ -1585,7 +1443,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_potential_storage{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "potential storage",
@@ -1597,7 +1455,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_potential_ingress{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "potential ingress",
@@ -1609,35 +1467,11 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
+              "expr": "delta(hostd_metrics_revenue_potential_egress{instance=\"$hostdhost\"}[5m])",
               "hide": false,
               "interval": "",
               "legendFormat": "potential egress",
               "refId": "L"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_registry_read{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "potential registry reads",
-              "refId": "M"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "delta(hostd_metrics_revenue_potential_registry_write{instance=\"$hostdhost\"}[5m]) / 1000000000000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "potential registry writes",
-              "refId": "N"
             }
           ],
           "title": "Revenue",
@@ -1685,7 +1519,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 3
+            "y": 21
           },
           "id": 18,
           "options": {
@@ -1711,7 +1545,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1750,7 +1584,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 3
+            "y": 21
           },
           "id": 41,
           "options": {
@@ -1776,7 +1610,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": false,
-              "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": true,
               "interval": "",
@@ -1884,7 +1718,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 8
+            "y": 26
           },
           "id": 33,
           "options": {
@@ -1906,7 +1740,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_contracts_locked_collateral{instance=\"$hostdhost\"}",
               "format": "time_series",
               "instant": false,
               "interval": "",
@@ -1919,7 +1753,7 @@
                 "uid": "<DSID>"
               },
               "exemplar": true,
-              "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000",
+              "expr": "hostd_metrics_contracts_risked_collateral{instance=\"$hostdhost\"}",
               "hide": false,
               "interval": "",
               "legendFormat": " risked",
@@ -1972,7 +1806,7 @@
             "h": 6,
             "w": 4,
             "x": 0,
-            "y": 4
+            "y": 22
           },
           "id": 32,
           "options": {
@@ -2025,71 +1859,6 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "deckbytes"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 4,
-            "x": 4,
-            "y": 4
-          },
-          "id": 37,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_registry_entries{instance=\"$hostdhost\"} * 113",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Registry",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
                     "color": "light-green"
                   },
                   {
@@ -2112,9 +1881,9 @@
           },
           "gridPos": {
             "h": 3,
-            "w": 16,
-            "x": 8,
-            "y": 4
+            "w": 20,
+            "x": 4,
+            "y": 22
           },
           "id": 12,
           "options": {
@@ -2171,9 +1940,9 @@
           },
           "gridPos": {
             "h": 3,
-            "w": 4,
-            "x": 8,
-            "y": 7
+            "w": 5,
+            "x": 4,
+            "y": 25
           },
           "id": 38,
           "options": {
@@ -2234,9 +2003,9 @@
           },
           "gridPos": {
             "h": 3,
-            "w": 4,
-            "x": 12,
-            "y": 7
+            "w": 5,
+            "x": 9,
+            "y": 25
           },
           "id": 64,
           "options": {
@@ -2296,9 +2065,9 @@
           },
           "gridPos": {
             "h": 3,
-            "w": 4,
-            "x": 16,
-            "y": 7
+            "w": 5,
+            "x": 14,
+            "y": 25
           },
           "id": 63,
           "options": {
@@ -2359,9 +2128,9 @@
           },
           "gridPos": {
             "h": 3,
-            "w": 4,
-            "x": 20,
-            "y": 7
+            "w": 5,
+            "x": 19,
+            "y": 25
           },
           "id": 65,
           "options": {
@@ -2452,7 +2221,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 10
+            "y": 28
           },
           "id": 62,
           "options": {
@@ -2564,7 +2333,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 19
+            "y": 23
           },
           "id": 36,
           "options": {
@@ -2629,7 +2398,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 19
+            "y": 23
           },
           "id": 48,
           "options": {
@@ -2664,136 +2433,6 @@
             }
           ],
           "title": "Storage Writes",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 6,
-            "y": 19
-          },
-          "id": 43,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_registry_reads{instance=\"$hostdhost\"}",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Registry Reads",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 9,
-            "y": 19
-          },
-          "id": 44,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_registry_writes{instance=\"$hostdhost\"}",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Registry Writes",
           "transformations": [],
           "type": "stat"
         },
@@ -2851,7 +2490,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 24
+            "y": 28
           },
           "id": 45,
           "options": {
@@ -2953,7 +2592,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -2965,7 +2605,7 @@
             "h": 5,
             "w": 3,
             "x": 0,
-            "y": 33
+            "y": 24
           },
           "id": 42,
           "options": {
@@ -3018,7 +2658,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -3030,7 +2671,7 @@
             "h": 5,
             "w": 3,
             "x": 3,
-            "y": 33
+            "y": 24
           },
           "id": 54,
           "options": {
@@ -3083,7 +2724,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -3095,7 +2737,7 @@
             "h": 5,
             "w": 3,
             "x": 6,
-            "y": 33
+            "y": 24
           },
           "id": 50,
           "options": {
@@ -3179,7 +2821,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -3190,7 +2833,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 38
+            "y": 29
           },
           "id": 51,
           "options": {
@@ -3289,7 +2932,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3297,633 +2940,640 @@
         "y": 24
       },
       "id": 57,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC/TB/month"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 4,
-            "x": 0,
-            "y": 47
-          },
-          "id": 69,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Storage",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC/tb"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 4,
-            "y": 47
-          },
-          "id": 49,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"} / 1000000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Ingress",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC/tb"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 7,
-            "y": 47
-          },
-          "id": 55,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Egress",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "SC/tb"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 10,
-            "y": 47
-          },
-          "id": 70,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "((hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000) * hostd_settings_collateral_multiplier{instance=\"$hostdhost\"}",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Collateral",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "mSC"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 13,
-            "y": 47
-          },
-          "id": 72,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Contract",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "mSC / million"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 16,
-            "y": 47
-          },
-          "id": 73,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 1000000000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Sector Access",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "decimals": 0,
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              },
-              "unit": "mSC / million"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 3,
-            "x": 19,
-            "y": 47
-          },
-          "id": 74,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "area",
-            "justifyMode": "center",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "text": {},
-            "textMode": "auto"
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": false,
-              "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 1000000000000000",
-              "format": "time_series",
-              "instant": true,
-              "interval": "",
-              "legendFormat": "",
-              "refId": "A"
-            }
-          ],
-          "title": "Base RPC",
-          "transformations": [],
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "<DSID>"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 9,
-            "w": 24,
-            "x": 0,
-            "y": 52
-          },
-          "id": 75,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom"
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "8.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
-              "format": "time_series",
-              "instant": false,
-              "interval": "",
-              "legendFormat": "storage",
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"} / 1000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "ingress",
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "egress",
-              "refId": "C"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "((hostd_settings_max_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000) / 30) * 10",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "collateral",
-              "refId": "D"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "contract",
-              "refId": "E"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 100000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "sector access",
-              "refId": "F"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "<DSID>"
-              },
-              "exemplar": true,
-              "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
-              "hide": false,
-              "interval": "",
-              "legendFormat": "rpc",
-              "refId": "G"
-            }
-          ],
-          "timeFrom": "1d",
-          "title": "Pricing",
-          "transformations": [],
-          "type": "timeseries"
-        }
-      ],
+      "panels": [],
       "title": "Pricing",
       "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "SC/TB/month"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 25
+      },
+      "id": 69,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Storage",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "SC/tb"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 4,
+        "y": 25
+      },
+      "id": 49,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Ingress",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "SC/tb"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 7,
+        "y": 25
+      },
+      "id": 55,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Egress",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "SC/tb"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 10,
+        "y": 25
+      },
+      "id": 70,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "((hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000) * hostd_settings_collateral_multiplier{instance=\"$hostdhost\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Collateral",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "mSC"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 13,
+        "y": 25
+      },
+      "id": 72,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Contract",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "mSC / million"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 16,
+        "y": 25
+      },
+      "id": 73,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 1000000000000000",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Sector Access",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "mSC / million"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 19,
+        "y": 25
+      },
+      "id": 74,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": false,
+          "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 1000000000000000",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Base RPC",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "<DSID>"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 75,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "(hostd_metrics_pricing_storage_price{instance=\"$hostdhost\"} * 43) / 10000000000",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "storage",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "hostd_metrics_pricing_ingress_price{instance=\"$hostdhost\"} / 1000000000000",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "ingress",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "hostd_metrics_pricing_egress_price{instance=\"$hostdhost\"} / 1000000000000",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "egress",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "((hostd_settings_max_collateral{instance=\"$hostdhost\"} / 1000000000000000000000000) / 30) * 10",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "collateral",
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "hostd_metrics_pricing_contract_price{instance=\"$hostdhost\"} / 1000000000000000000000",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contract",
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "hostd_metrics_pricing_sector_access_price{instance=\"$hostdhost\"} / 100000000000000000",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "sector access",
+          "refId": "F"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "<DSID>"
+          },
+          "exemplar": true,
+          "expr": "hostd_metrics_pricing_baserpc_price{instance=\"$hostdhost\"} / 100000000000000000",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "rpc",
+          "refId": "G"
+        }
+      ],
+      "timeFrom": "1d",
+      "title": "Pricing",
+      "transformations": [],
+      "type": "timeseries"
     }
   ],
   "refresh": "30s",
