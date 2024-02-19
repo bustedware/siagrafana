@@ -1,7 +1,6 @@
 # Sia Monitoring
 
-*special note: these dashboards are built from forks of hostd, renterd, and walletd. here are links to each fork*
-- *hostd: https://github.com/bustedware/hostd*
+*special note: the dashboards for renterd and walletd are built from forks of the official sia repositories. here are links to each fork*
 - *renterd: https://github.com/bustedware/renterd*
 - *walletd: https://github.com/bustedware/walletd*
 
