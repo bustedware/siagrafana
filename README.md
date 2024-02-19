@@ -2,7 +2,7 @@
 
 *special note: the dashboards for renterd and walletd are built from forks of the official sia repositories. here are links to each fork*
 - *renterd: https://github.com/bustedware/renterd*
-- *walletd: https://github.com/bustedware/walletd*
+- *walletd: https://github.com/bustedware/walletd/tree/its-happening*
 
 # Quick Start
 1. configure `siagrafana.json` with your hostd, renterd, walletd, and grafana information
