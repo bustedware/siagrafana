@@ -92,7 +92,14 @@ def getSiaDashboardIDs(dashboards):
             siadashboards[key] = dashboards[key]
     return siadashboards
 
-services = ['hostd', 'renterd', 'walletd']
+services = []
+if "hostd_hosts" in siahosts:
+    services.append('hostd')
+if "renterd_hosts" in siahosts:
+    services.append('renterd')
+if "walletd_hosts" in siahosts:
+    services.append('walletd')
+
 datasources = grafanaGetSiaDataSources()
 highest_id, dashboards = grafanaGetDashboards()
 siadashboards = getSiaDashboardIDs(dashboards)
