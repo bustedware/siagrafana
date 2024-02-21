@@ -12,7 +12,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_buckets
     metrics_path: /prometheus/bus/buckets
@@ -21,7 +21,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_consensus_state
     metrics_path: /prometheus/bus/consensus/state
@@ -30,7 +30,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_contracts
     metrics_path: /prometheus/bus/contracts
@@ -39,7 +39,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_contracts_prunable
     metrics_path: /prometheus/bus/contracts/prunable
@@ -48,7 +48,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_hosts
     metrics_path: /prometheus/bus/hosts
@@ -57,7 +57,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_hosts_allowlist
     metrics_path: /prometheus/bus/hosts/allowlist
@@ -66,7 +66,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_hosts_blocklist
     metrics_path: /prometheus/bus/hosts/blocklist
@@ -75,7 +75,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_hosts_scanning
     metrics_path: /prometheus/bus/hosts/scanning
@@ -84,7 +84,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_params_gouging
     metrics_path: /prometheus/bus/params/gouging
@@ -93,7 +93,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_params_upload
     metrics_path: /prometheus/bus/params/upload
@@ -102,7 +102,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_slabbuffers
     metrics_path: /prometheus/bus/slabbuffers
@@ -111,7 +111,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_search_objects
     metrics_path: /prometheus/bus/search/objects
@@ -120,7 +120,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_settings
     metrics_path: /prometheus/bus/settings
@@ -129,7 +129,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_state
     metrics_path: /prometheus/bus/state
@@ -138,7 +138,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_stats_objects
     metrics_path: /prometheus/bus/stats/objects
@@ -147,7 +147,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_syncer_address
     metrics_path: /prometheus/bus/syncer/address
@@ -156,7 +156,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_syncer_peers
     metrics_path: /prometheus/bus/syncer/peers
@@ -165,7 +165,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_txpool_recommendedfee
     metrics_path: /prometheus/bus/txpool/recommendedfee
@@ -174,7 +174,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_txpool_transactions
     metrics_path: /prometheus/bus/txpool/transactions
@@ -183,7 +183,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_wallet
     metrics_path: /prometheus/bus/wallet
@@ -192,7 +192,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_wallet_outputs
     metrics_path: /prometheus/bus/wallet/outputs
@@ -201,7 +201,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_wallet_pending
     metrics_path: /prometheus/bus/wallet/pending
@@ -210,7 +210,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_bus_wallet_transactions
     metrics_path: /prometheus/bus/wallet/transactions
@@ -219,7 +219,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_autopilot_state
     metrics_path: /prometheus/autopilot/state
@@ -228,7 +228,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_worker_memory
     metrics_path: /prometheus/worker/memory
@@ -237,7 +237,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_worker_stats_downloads
     metrics_path: /prometheus/worker/stats/downloads
@@ -246,7 +246,7 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 
   - job_name: renterd_worker_stats_uploads
     metrics_path: /prometheus/worker/stats/uploads
@@ -255,5 +255,5 @@ scrape_configs:
       password: 'hostsarecool'
     static_configs:
       - targets:
-        - renterd:9982
+        - localhost:9980
 

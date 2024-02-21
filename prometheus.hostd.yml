@@ -14,7 +14,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_state_consensus
     metrics_path: /api/state/consensus
@@ -25,7 +25,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_syncer_address
     metrics_path: /api/syncer/address
@@ -36,7 +36,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_syncer_peers
     metrics_path: /api/syncer/peers
@@ -47,7 +47,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_alerts
     metrics_path: /api/alerts
@@ -58,7 +58,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_settings
     metrics_path: /api/settings
@@ -69,7 +69,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_metrics
     metrics_path: /api/metrics
@@ -80,7 +80,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_volumes
     metrics_path: /api/volumes
@@ -91,7 +91,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_sessions
     metrics_path: /api/sessions
@@ -102,7 +102,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_tpool_fee
     metrics_path: /api/tpool/fee
@@ -113,7 +113,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_wallet
     metrics_path: /api/wallet
@@ -124,7 +124,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_wallet_transactions
     metrics_path: /api/wallet/transactions
@@ -135,7 +135,7 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 
   - job_name: hostd_api_wallet_pending
     metrics_path: /api/wallet/pending
@@ -146,5 +146,5 @@ scrape_configs:
       response: [prometheus]
     static_configs:
       - targets:
-        - hostd:9985
+        - localhost:9980
 

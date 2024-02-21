@@ -50,8 +50,8 @@ def get_wallets(un, pw, host):
 walletd_jobs = ""
 if "walletd_hosts" in siahosts:
     for host in siahosts["walletd_hosts"]:
-        wallets = get_wallets("", siahosts["walletd_meta"]["apipwd"], host)
-        for endpoint in siahosts["walletd_meta"]["endpoints"]:
+        wallets = get_wallets("", siahosts["walletd_api_pwd"], host)
+        for endpoint in siahosts["walletd_endpoints"]:
             if ":name" in endpoint:
                 for wallet in wallets:
                     job_name = endpoint.replace(":name",wallet)
@@ -59,12 +59,12 @@ if "walletd_hosts" in siahosts:
                     job_name.insert(1,host.split(":")[0])
                     job_name.insert(2,host.split(":")[1])
                     job_name = "walletd_" + "_".join(job_name)
-                    walletd_jobs = walletd_jobs + get_prometheus_job("", siahosts["walletd_meta"]["apipwd"], job_name, endpoint.replace(":name",wallet), [host]) + "\n"
+                    walletd_jobs = walletd_jobs + get_prometheus_job("", siahosts["walletd_api_pwd"], job_name, endpoint.replace(":name",wallet), [host]) + "\n"
 
-    for endpoint in siahosts["walletd_meta"]["endpoints"]:
+    for endpoint in siahosts["walletd_endpoints"]:
         if ":name" not in endpoint:
             job_name = "walletd_" + "_".join(endpoint.split("/")[2:])
-            walletd_jobs = walletd_jobs + get_prometheus_job("", siahosts["walletd_meta"]["apipwd"], job_name, endpoint, siahosts["walletd_hosts"]) + "\n"
+            walletd_jobs = walletd_jobs + get_prometheus_job("", siahosts["walletd_api_pwd"], job_name, endpoint, siahosts["walletd_hosts"]) + "\n"
 
     with open('prometheus.walletd.yml', 'w') as file:
         file.write(config_header + walletd_jobs)
@@ -72,9 +72,9 @@ if "walletd_hosts" in siahosts:
 ## HOSTD
 hostd_jobs = ""
 if "hostd_hosts" in siahosts:
-    for endpoint in siahosts["hostd_meta"]["endpoints"]:
+    for endpoint in siahosts["hostd_endpoints"]:
         job_name = "hostd_" + "_".join(endpoint.split("/")[1:])
-        hostd_jobs = hostd_jobs + get_prometheus_job("", siahosts["hostd_meta"]["apipwd"], job_name, endpoint, siahosts["hostd_hosts"]) + "\n"
+        hostd_jobs = hostd_jobs + get_prometheus_job("", siahosts["hostd_api_pwd"], job_name, endpoint, siahosts["hostd_hosts"]) + "\n"
 
     with open('prometheus.hostd.yml', 'w') as file:
         file.write(config_header + hostd_jobs)
@@ -82,9 +82,9 @@ if "hostd_hosts" in siahosts:
 ## RENTERD
 renterd_jobs = ""
 if "renterd_hosts" in siahosts:
-    for endpoint in siahosts["renterd_meta"]["endpoints"]:
+    for endpoint in siahosts["renterd_endpoints"]:
         job_name = "renterd_" + "_".join(endpoint.split("/")[2:])
-        renterd_jobs = renterd_jobs + get_prometheus_job("", siahosts["renterd_meta"]["apipwd"], job_name, endpoint, siahosts["renterd_hosts"]) + "\n"
+        renterd_jobs = renterd_jobs + get_prometheus_job("", siahosts["renterd_api_pwd"], job_name, endpoint, siahosts["renterd_hosts"]) + "\n"
 
     with open('prometheus.renterd.yml', 'w') as file:
         file.write(config_header + renterd_jobs)
