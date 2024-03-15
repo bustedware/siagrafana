@@ -1,7 +1,12 @@
 import requests, json, re, sys
 
-with open("siagrafana.json", 'r') as json_file:
-    siahosts = json.load(json_file)
+try:
+    print('reading siagrafana.json')
+    with open("siagrafana.json", 'r') as json_file:
+        siahosts = json.load(json_file)
+except:
+    print('unable to read siagrafana.json')
+    sys.exit()
 
 grafanaBaseUrl = siahosts['grafana_host']
 headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Bearer " + siahosts['grafana_api_key']}
@@ -54,12 +59,12 @@ def grafanaManageDashboard(dashboard):
     resp = r.json()
     if 'message' in resp:
         print(resp)
-        return False
+        return False, resp
     else:
         if 'status' in resp:
-            return resp['status'] == 'success'
+            return resp['status'] == 'success', resp
         else:
-            return False
+            return False, resp
 
 def generateSiaDashboard(siaservice, dsid, dashboard_meta = None):
     with open('grafana.'+siaservice+'.template.json', 'r') as json_file:
@@ -78,10 +83,15 @@ def generateSiaDashboard(siaservice, dsid, dashboard_meta = None):
 
 def grafanaCreateSiaDashboard(datasources, siaservice, dashboard_meta = None):
     ds = ""
-    if 'sia' in datasources:
-        ds = datasources['sia']
-    else:
-        ds = datasources[siaservice]
+    try:
+        if 'sia' in datasources:
+            ds = datasources['sia']
+        else:
+            ds = datasources[siaservice]
+    except:
+        print('unable to locate data sources, found:')
+        print(datasources)
+        sys.exit()
     dashboard = generateSiaDashboard(siaservice, ds, dashboard_meta)
     return grafanaManageDashboard(dashboard)
 
@@ -105,4 +115,6 @@ highest_id, dashboards = grafanaGetDashboards()
 siadashboards = getSiaDashboardIDs(dashboards)
 
 for service in services:
-    grafanaCreateSiaDashboard(datasources, service, siadashboards[service])
+    create_success, response = grafanaCreateSiaDashboard(datasources, service, siadashboards[service])
+    print('creating dashboard for ' + service + ' ' + ("failed", "succeeded")[create_success])
+    print(response)
